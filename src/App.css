@@ -1,0 +1,16 @@
+/* .app{
+
+} */
+
+.container{
+  height: 98vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 820px){
+  .container{
+    height: 100vh
+  }
+}

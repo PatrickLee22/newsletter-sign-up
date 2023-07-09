@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
 import './App.css'
@@ -25,7 +25,7 @@ function App() {
   return (
     <main className='app'>
       <div className='container'>
-        <BrowserRouter basename='/newsletter-sign-up'>
+        <HashRouter>
           <Routes>
             <Route path='/' element={
               <Login isDesktop={isDesktop}/>
@@ -36,7 +36,7 @@ function App() {
             }>
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </div>
       <Footer/>
     </main>

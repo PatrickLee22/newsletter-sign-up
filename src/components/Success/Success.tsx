@@ -1,4 +1,5 @@
 import './Success.css'
+import checkmark from '../../assets/images/icon-success.svg'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -7,13 +8,12 @@ const Success = () =>{
     const navigate = useNavigate();
 
     const handleClick = () =>{
-        
         navigate('/')
     }
 
     return <div className="success-screen">
         <section className='message'>
-            <img src='./src/assets/images/icon-success.svg'/>
+            <img src={checkmark} alt='checkmark'/>
             <h1>Thanks for subscribing!</h1>
             <p>
                 A confirmation email has been sent to <strong>ash@loremcompany.com</strong>.

@@ -1,4 +1,8 @@
 import './Login.css'
+import checkmark from '../../assets/images/icon-success.svg'
+import loginImageDesktop from '../../assets/images/illustration-sign-up-desktop.svg'
+import loginImageMobile from '../../assets/images/illustration-sign-up-mobile.svg'
+
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -32,21 +36,21 @@ const Login = ({isDesktop}: Props) =>{
         }
     }
     return <div className='login'>
-        {!isDesktop && <img className="login-illustration" src='./src/assets/images/illustration-sign-up-mobile.svg' alt="login-image"/>}
+        {!isDesktop && <img className="login-illustration" src={loginImageMobile} alt="login-image"/>}
         <section className='login-info'>
             <h1>Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
             <div className='checkpoints'>
                 <div className='checkpoint-1'>
-                    <img src='./src/assets/images/icon-success.svg'/>
+                    <img src={checkmark} alt='checkmark'/>
                     <span>Product discovery and building what matters</span>
                 </div>
                 <div className='checkpoint-2'>
-                    <img src='./src/assets/images/icon-success.svg'/>
+                    <img src={checkmark} alt='checkmark'/>
                     <span>Measuring to ensure updates are a success</span>
                 </div>
                 <div className='checkpoint-3'>
-                    <img src='./src/assets/images/icon-success.svg'/>
+                    <img src={checkmark} alt='checkmark'/>
                     <span>And much more!</span>
                 </div>
             </div>
@@ -68,7 +72,7 @@ const Login = ({isDesktop}: Props) =>{
                 Subscribe to monthly newsletter
             </button>
         </section>
-        {isDesktop && <img className="login-illustration" src='./src/assets/images/illustration-sign-up-desktop.svg' alt="login-image"/>}
+        {isDesktop && <img className="login-illustration" src={loginImageDesktop} alt="login-image"/>}
 
 
     </div>

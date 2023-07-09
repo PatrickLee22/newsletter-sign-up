@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
 import './App.css'
@@ -10,11 +10,14 @@ import Success from './components/Success/Success'
 function App() {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 820)
 
+  //const baseURL = process.env.PUBLIC_URL;
+
   const updateScreenState = () => {
     setDesktop(window.innerWidth > 820)
   }
 
   useEffect(() => {
+    console.log(import.meta.env.PUBLIC_URL)
     window.addEventListener("resize", updateScreenState)
     return () => window.removeEventListener("resize", updateScreenState)
   })
@@ -22,7 +25,7 @@ function App() {
   return (
     <main className='app'>
       <div className='container'>
-        <Router>
+        <BrowserRouter basename='/newsletter-sign-up'>
           <Routes>
             <Route path='/' element={
               <Login isDesktop={isDesktop}/>
@@ -33,7 +36,7 @@ function App() {
             }>
             </Route>
           </Routes>
-        </Router>
+        </BrowserRouter>
       </div>
       <Footer/>
     </main>
